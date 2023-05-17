@@ -1,0 +1,26 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #084c61;
+}
+
+h1 {
+    text-align: center;
+    color: #084c61;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    background: #56a3a6;
+    border: black solid 1px;
+}
+
+
+.quiz-container, .rules {
+    background: #e3b505;
+    border: #4f6d7a solid 3px;
+    border-radius: 6%;
+    justify-content: center;
+    width: 30%;
+    padding: 0 15px 15px 15px;
+}
+
