@@ -1,223 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content=""width-device-width, initial-scale=1.0">
-        <title>Bookish Quiz</title>  
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">      
-    </head>
-    
-    <body>
-        <!-- Title -->
-        <h1>Do You Know Fantasy?</h1>
-        <div class="rules">
-            <span>Quiz Rules</span>
-            <!-- Rules for Quiz -->
-             <ul>
-                <li>You will have 5 minutes to complete this quiz</li>
-                <li>You can only answer a question once</li>
-                <li>If you answer a question incorrectly you will lose 30 seconds of time</li>
-                <li>You will get your results at the end</li>
-            </ul>
-        <!-- Start Quiz Button -->
-            <button class="start-button">Start Quiz!</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content=""width-device-width, initial-scale=1.0">
+    <title>Bookish Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Title -->
+    <h1>Do You Know Fantasy?</h1>
+    <div class="rules">
+      <span>Quiz Rules</span>
+      <ul>
+        <li>You will have 5 minutes to complete this quiz</li>
+        <li>You can only answer a question once</li>
+        <li>
+          If you answer a question incorrectly you will lose 30 seconds of time
+        </li>
+        <li>You will get your results at the end</li>
+      </ul>
+      <!-- Start Quiz Button -->
+      <button class="start-button">Start Quiz!</button>
+    </div>
+    <!-- Question 1 -->
+    <div class="quiz-container hide">
+      <!-- Timer -->
+      <header>
+        <div class="timer">00:00</div>
+      </header>
+      <section>
+        <div class="question">
+          <span>Question</span>
         </div>
-        <!-- Question 1 -->
-        <div class="quiz-container">
-            <!-- Timer -->
-        <header>
-            <div class="timer">
-                <p>Time Left:</p>   
-            </div>
-        </header>  
-              <section>
-                <div class="question">
-                    <span> Who finished writing Robert Jordan's <i>Wheel of Time</i> epic fantasy series?</span>
-                </div>
-                <br>
-                <div class="answers-list">
-                    <div class="answer">
-                        <input type="radio" name="question1" value="A">
-                        <span>Neil Gaiman</span>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question1" value="B">
-                        <span> Terry Pratchett</span>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question1" value="C">
-                        <span>Brandon Sanderson</span><!--Correct Answer-->
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question1" value="D">
-                        <span> R.F. Kuang</span>
-                    </div>
-                </div>
-              </section>
-              <!-- Next -->
-              <br>
-              <button>Next Question!</button>
+        <br />
+        <div class="answers-list">
         </div>
-        
-        <!-- Question 2 -->
-        <div class="quiz-container">
-                  <!-- Timer -->
-        <header>
-            <div class="timer">
-                <p>Time Left:</p>   
-            </div>
-        </header>  
-            <section>
-              <div class="question">
-                  <span>Which book centres around a human pulled into the land of the Fae?</span>
-              </div>
-              <br>
-              <div class="answers-list">
-                  <div class="answer">
-                      <input type="radio" name="question2" value="A">
-                      <span>From Blood and Ash</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question2" value="B">
-                      <span> A Court of Thorns and Roses</span> <!--Correct Answer-->
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question2" value="C">
-                      <span>Red Rising</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question2" value="D">
-                      <span>Coraline</span>
-                  </div>
-              </div>
-            </section>
-            <br>
-            <!-- Next -->
-            <button>Next Question!</button>
-      </div>  
-        
-        <!-- Question 3 -->
-        <div class="quiz-container">
-                  <!-- Timer -->
-        <header>
-            <div class="timer">
-                <p>Time Left:</p>   
-            </div>
-        </header>  
-            <section>
-              <div class="question">
-                  <span>In <i>From Blood and Ash</i> what is Hawke's real name?</span>
-              </div>
-              <br>
-              <div class="answers-list">
-                  <div class="answer">
-                      <input type="radio" name="question3" value="A">
-                      <span>Casteel</span> <!--Correct Answer-->
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question3" value="B">
-                      <span>Keiran</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question3" value="C">
-                      <span>Nyktos</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question3" value="D">
-                      <span>Malik</span>
-                  </div>
-              </div>
-            </section>
-            <br>
-            <!-- Next -->
-            <button>Next Question!</button>
-      </div>  
-        <!-- Next -->
-        <!-- Question 4 -->
-        <div class="quiz-container">
-                  <!-- Timer -->
-        <header>
-            <div class="timer">
-                <p>Time Left:</p>   
-            </div>
-        </header>  
-            <section>
-              <div class="question">
-                  <span>Which of Neil Gaiman's books explores a war between ancient gods and new gods?</span>
-              </div>
-              <br>
-              <div class="answers-list">
-                  <div class="answer">
-                      <input type="radio" name="question4" value="A">
-                      <span>Norse Mythology</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question4" value="B">
-                      <span>The Ocean at the End of the Lane</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question4" value="C">
-                      <span>Neverwhere</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question4" value="D">
-                      <span>American Gods</span> <!--Correct Answer-->
-                  </div>
-              </div>
-            </section>
-            <br>
-            <!-- Next -->
-            <button>Next Question!</button>
-      </div>  
-        <!-- Next -->
-        <!-- Question 5 -->
-        <div class="quiz-container">
-                  <!-- Timer -->
-        <header>
-            <div class="timer">
-                <p>Time Left: 5:00</p>   
-            </div>
-        </header>  
-            <section>
-              <div class="question">
-                  <span> QUESTION...</span>
-              </div>
-              <div class="answers-list">
-                  <div class="answer">
-                      <input type="radio" name="question5" value="A">
-                      <span>answer 1</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question5" value="B">
-                      <span> answer 2</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question5" value="C">
-                      <span> answer 3</span>
-                  </div>
-                  <div class="answer">
-                      <input type="radio" name="question5" value="D">
-                      <span> answer 4</span>
-                  </div>
-              </div>
-            </section>
-            <br>
-             <!-- Done button -->
-            <button>Finish Quiz</button>
-      </div>  
-        <!-- Results -->
-      <div class="results">
-        <span>Results:</span>
-            <br>
-                <div class="corect">Correct Answers:</div>
-                <div class="incorrect">Incorrect answers:</div>
-                <div class="time-used">Time to complete:</div>
-            <br>
-      </div>
-        <!-- Restart Quiz Button -->
-        <button>Retake Quiz</button>
-        <!-- JavaScript Link -->
-        <script src="script.js"></script>
-    </body>
+      </section>
+    </div>
+    <!-- Results -->
+    <div class="results hide">
+      <span>Results:</span>
+      <br />
+      <div class="corect">Correct Answers:</div>
+      <div class="incorrect">Incorrect answers:</div>
+      <div class="time-used">Time to complete:</div>
+      <br />
+    </div>
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+  </body>
 </html>
