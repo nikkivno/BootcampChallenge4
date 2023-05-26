@@ -94,10 +94,8 @@ for(var i=0; i<questions[0].answers.length; i++){
 }
 
 var timerEl = document.querySelector(".timer");
+var timeLeft = 300; //5 minutes
 
-function countdown(){
-    var timeLeft = 300; //5 minutes
-} 
 
 var timeInterval = setInterval(function() {
     if (timeLeft > 1) {
@@ -110,24 +108,11 @@ var timeInterval = setInterval(function() {
     } 
 }, 1000);
 
+// function timerEl(){
+//     var minutes = Math.floor (seconds / 60);
+//     var extraSeconds = seconds % 60;
+// }
 
 
 
-
-
-//     var timerInterval = setInterval(function() {
-//       secondsLeft--;
-//       timerEl.textContent = "Time Left: " + minutesLeft;
-//       if(secondsLeft === 0) {
-//         clearInterval(timerInterval);
-//         sendMessage();
-//       }
-  
-//     }, 300000);
-//   }
-
-
-
-startBtnEl.addEventListener("click", startHandler)
-
-// function that runs timer
+startBtnEl.addEventListener("click", startHandler);
