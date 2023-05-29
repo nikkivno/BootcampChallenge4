@@ -144,8 +144,9 @@ var timeInterval = setInterval(function() {
         timeLeft--;  
     } else {
         timerEl.textContent = " ";
-        clearInterval(timeInterval);
-        displayMessage();    
+        clearInterval(timeInterval); 
+        qContainerEl.classList.add('hide')
+        initialInputForm.classList.remove('hide')
     }
 }, 1000);
 
