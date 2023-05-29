@@ -15,7 +15,9 @@
     <!-- Title -->
     <h1>Do You Know Fantasy?</h1>
     <div class="rules">
-      <span class="title">Quiz Rules</span>
+      <div class="quiz-title">
+        <span>Quiz Rules</span>
+      </div>
       <ul>
         <li>You will have 5 minutes to complete this quiz</li>
         <li>You can only answer a question once</li>
@@ -24,8 +26,9 @@
         </li>
         <li>You will get your results at the end</li>
       </ul>
-      <!-- Start Quiz Button -->
-      <button class="start-button">Start Quiz!</button>
+      <div class="start-button">
+        <button>Start Quiz!</button>
+      </div>
     </div>
     <!-- Question 1 -->
     <div class="quiz-container hide">
@@ -38,20 +41,21 @@
           <span>Question</span>
         </div>
         <br />
-        <div class="answers-list">
-        </div>
+        <div class="answers-list"></div>
         <div class="hide" id="got-it-right"></div>
       </section>
     </div>
     <!-- Input form -->
     <div class="initialsInput hide">
-      <span>Please write your name:</span>
-        <input type="text" id="initial-input">
-        <button onclick="setInitial()">Submit</button>
+      <span class="initials-cue">Please write your Initals:</span>
+      <input type="text" id="initial-input" /> <br />
+      <button onclick="setInitial()">Submit</button>
     </div>
     <!-- Results -->
     <div class="results hide">
-      <span>Results:</span>
+      <div class="results-title">
+        <span>Results</span>
+      </div>
       <br />
       <span>User Initials: </span>
       <div class="initials"></div>

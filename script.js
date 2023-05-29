@@ -66,20 +66,17 @@ var initialValue;
 var currentQuestion = 0;
 
 function startHandler() {
-    // unhide questions container
     qContainerEl.classList.remove("hide")
-    // Hide rules
     var rulesContainerEl = document.querySelector(".rules")
     rulesContainerEl.classList.add("hide")
-    // populate questions and answers
     displayQuestion(0)
 }
 
 
 function displayQuestion(questionIndex) {
-questionEl.textContent=questions[questionIndex].question
-clearAnswers();
-for(var i=0; i<questions[questionIndex].answers.length; i++){
+    questionEl.textContent=questions[questionIndex].question
+    clearAnswers();
+    for(var i=0; i<questions[questionIndex].answers.length; i++){
     var btnEl=document.createElement("button")
     btnEl.classList.add("btn")
     btnEl.textContent=questions[questionIndex].answers[i].text
@@ -92,7 +89,7 @@ for(var i=0; i<questions[questionIndex].answers.length; i++){
 
 function clearAnswers() {
     while (answerEl.firstChild) {
-        answerEl.removeChild(answerEl.firstChild);
+    answerEl.removeChild(answerEl.firstChild);
     }
 }
 
@@ -136,17 +133,9 @@ function setInitial() {
         score: scoreEl.innerText
     }));
 }
-
-// var userInfo{
-//    Initials: ;
-//    Score: ;
-// }
-
-// localStorage.setItem("user", JSON.stringify(userInfo));
-  
                 
 var timerEl = document.querySelector(".timer");
-var timeLeft = 300; //5 minutes
+var timeLeft = 120; 
 
 
 var timeInterval = setInterval(function() {
@@ -157,11 +146,9 @@ var timeInterval = setInterval(function() {
         timerEl.textContent = " ";
         clearInterval(timeInterval);
         displayMessage();    
-    } 
+    }
 }, 1000);
 
 
 
 startBtnEl.addEventListener("click", startHandler);
-
-// compare user answer to correct answer then do something with time and score

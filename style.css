@@ -14,13 +14,15 @@ button {
     color: whitesmoke;
     background: #00172d;
     border: black solid 1px;
-  
+}
+
+.start-button {
+    align-items: center;
 }
 
 .title {
     position: relative;
     font-size: larger;  
-
 }
 
 .quiz-container, .rules, .results {
@@ -41,9 +43,12 @@ button {
     height: 30px;
     color: black;
     text-align: left;
-    text-align: right;
-    /* box-shadow: 0 0 3px 0 #00172d; */
-    
+    text-align: right;   
+}
+
+.quiz-title {
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 .question {
@@ -53,6 +58,23 @@ button {
 .answers-list, ul {
     width: 50%;
     margin: auto;
+
+}
+
+.initials-cue {
+    color: white;
+}
+
+.initialsInput {
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.results-title {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: larger;
 }
 
 #next {
