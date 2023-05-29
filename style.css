@@ -14,6 +14,13 @@ button {
     color: whitesmoke;
     background: #00172d;
     border: black solid 1px;
+  
+}
+
+.title {
+    position: relative;
+    font-size: larger;  
+
 }
 
 .quiz-container, .rules, .results {
@@ -35,7 +42,7 @@ button {
     color: black;
     text-align: left;
     text-align: right;
-    box-shadow: 0 0 3px 0 #00172d;
+    /* box-shadow: 0 0 3px 0 #00172d; */
     
 }
 

@@ -1,19 +1,3 @@
-// Start Quiz button takes you to first question
-
-// Timer starts counting down from 5 minutes
-
-// Option for time to be deducted if the user answers incorrectly
-
-// Next question button takes user to the second question
-
-// Repeat lines 2-4 until 5th question
-
-//After last question (5) is answered 'Finish Quiz" button takes you to results
-
-// Connect Results page to answers given from questions 1-5 along with your total time it took you to complete it
-
-// Retake quiz button can start you again
-
 var questions = [
     { 
         question: "Who finished writing Robert Jordan's 'Wheel of Time' epic fantasy series after his passing?",
@@ -62,37 +46,105 @@ var questions = [
     }
 ]
 
+var answers = [
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+]
+
 var questionEl = document.querySelector(".question");
 var answerEl = document.querySelector(".answers-list");
 var startBtnEl = document.querySelector(".start-button");
-
+var nextBtnEl = document.querySelector(".nextBtn");
+var gotItRightEl = document.querySelector("#got-it-right");
+var resultsEl = document.querySelector(".results");
+var qContainerEl = document.querySelector(".quiz-container");
+var initialInputForm = document.querySelector(".initialsInput");
+var initialValue;
+var currentQuestion = 0;
 
 function startHandler() {
     // unhide questions container
-    var qContainerEl = document.querySelector(".quiz-container")
     qContainerEl.classList.remove("hide")
     // Hide rules
     var rulesContainerEl = document.querySelector(".rules")
     rulesContainerEl.classList.add("hide")
     // populate questions and answers
-    displayQuestion()
-    // start timer 
-
+    displayQuestion(0)
 }
 
 
-function displayQuestion() {
-questionEl.textContent=questions[0].question
-for(var i=0; i<questions[0].answers.length; i++){
+function displayQuestion(questionIndex) {
+questionEl.textContent=questions[questionIndex].question
+clearAnswers();
+for(var i=0; i<questions[questionIndex].answers.length; i++){
     var btnEl=document.createElement("button")
     btnEl.classList.add("btn")
-    btnEl.textContent=questions[0].answers[i].text
-    var brEl = document.createElement("br")
-    btnEl.append(brEl)
+    btnEl.textContent=questions[questionIndex].answers[i].text
+    var brEl = document.createElement("br")        
     answerEl.append(btnEl)
+    answerEl.append(brEl)
+    btnEl.addEventListener("click", (e) => setAnswer(currentQuestion, e.target.innerText))
 }
 }
 
+function clearAnswers() {
+    while (answerEl.firstChild) {
+        answerEl.removeChild(answerEl.firstChild);
+    }
+}
+
+function nextPage() {
+    currentQuestion = currentQuestion + 1;
+    if (currentQuestion < questions.length) {
+        displayQuestion(currentQuestion);
+    }
+    else  {
+        qContainerEl.classList.add('hide');
+        initialInputForm.classList.remove('hide');
+    }
+}
+
+function setAnswer(questionNum, answer) {
+    var currentQuestion = questions[questionNum];
+    var gotItRight = currentQuestion.answers.filter(a => a.text === answer)[0].correct
+    answers[questionNum] = gotItRight;
+    gotItRightEl.classList.remove("hide")
+    if (gotItRight) {
+        gotItRightEl.innerText = "Correct!"
+    } else {
+        gotItRightEl.innerText = "Wrong!"
+    }
+    setTimeout(function() {
+        gotItRightEl.classList.add("hide")
+        nextPage()
+    }, 2000)
+}
+
+function setInitial() {
+    initialValue = document.querySelector('#initial-input').value;
+    initialInputForm.classList.add('hide');
+    resultsEl.classList.remove('hide');
+    var initialDisplayEl = document.querySelector('.initials');
+    initialDisplayEl.innerText = initialValue;
+    var scoreEl = document.querySelector('.score');
+    scoreEl.innerText = answers.filter(el => el === true).length;
+    localStorage.setItem(initialValue, JSON.stringify({
+        userInitials: initialValue,
+        score: scoreEl.innerText
+    }));
+}
+
+// var userInfo{
+//    Initials: ;
+//    Score: ;
+// }
+
+// localStorage.setItem("user", JSON.stringify(userInfo));
+  
+                
 var timerEl = document.querySelector(".timer");
 var timeLeft = 300; //5 minutes
 
@@ -108,11 +160,8 @@ var timeInterval = setInterval(function() {
     } 
 }, 1000);
 
-// function timerEl(){
-//     var minutes = Math.floor (seconds / 60);
-//     var extraSeconds = seconds % 60;
-// }
-
 
 
 startBtnEl.addEventListener("click", startHandler);
+
+// compare user answer to correct answer then do something with time and score
