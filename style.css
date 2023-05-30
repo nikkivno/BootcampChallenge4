@@ -1,7 +1,13 @@
+/* General */
+
+html {
+    height: 100%;
+}
 body {
     font-family: 'Montserrat', sans-serif;
     color: black;
-    background: #00172d;
+    background: #00172d; /* if gradient won't work */
+    background-image: linear-gradient(to bottom right, #00172d, #D7E4F1);
 }
 
 h1 {
@@ -14,15 +20,22 @@ button {
     color: whitesmoke;
     background: #00172d;
     border: black solid 1px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 3px;
 }
 
-.start-button {
-    align-items: center;
-}
+
+/* Rule Page */
 
 .title {
     position: relative;
     font-size: larger;  
+}
+
+.quiz-title {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: larger;
 }
 
 .quiz-container, .rules, .results {
@@ -35,20 +48,17 @@ button {
     justify-content: center;
     width: 50%;
     padding: 0 15px 15px 15px;
-    margin: 0 auto;
-   
+    margin: 0 auto;  
 }
+
+
+/* Question Container */
 
 .timer {
     height: 30px;
     color: black;
     text-align: left;
-    text-align: right;   
-}
-
-.quiz-title {
-    text-align: center;
-    padding-bottom: 15px;
+    text-align: right;
 }
 
 .question {
@@ -61,26 +71,50 @@ button {
 
 }
 
+#got-it-right {
+    color: grey;
+    font-style: italic;
+}
+
+/* User Information Input  */
+
 .initials-cue {
     color: white;
 }
 
 .initialsInput {
+    background: whitesmoke;
+    border-radius: 5px 5px ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     justify-content: center;
-    align-items: center;
-    
+    width: 50%;
+    padding: 15px 15px 15px 15px;
+    margin: 0 auto; 
 }
 
-.results-title {
+.sub-btn {
+    margin-top: 30px;
+}
+
+
+/* Result Page */
+
+.results {
     text-align: center;
     padding-bottom: 15px;
-    font-size: larger;
 }
 
-#next {
-    margin-top: 10%;
-    margin-left: 120%;
+#result-title {
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 15px;
 }
+
+
+/* Javascript Related */
 
 .hide {
     display: none;

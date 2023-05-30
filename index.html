@@ -16,7 +16,7 @@
     <h1>Do You Know Fantasy?</h1>
     <div class="rules">
       <div class="quiz-title">
-        <span>Quiz Rules</span>
+        <span class="title">Quiz Rules</span>
       </div>
       <ul>
         <li>You will have 5 minutes to complete this quiz</li>
@@ -30,11 +30,11 @@
         <button>Start Quiz!</button>
       </div>
     </div>
-    <!-- Question 1 -->
+
     <div class="quiz-container hide">
       <!-- Timer -->
       <header>
-        <div class="timer">00:00</div>
+        <div class="timer"></div>
       </header>
       <section class="info-box">
         <div class="question">
@@ -45,26 +45,31 @@
         <div class="hide" id="got-it-right"></div>
       </section>
     </div>
-    <!-- Input form -->
+
     <div class="initialsInput hide">
-      <span class="initials-cue">Please write your Initals:</span>
-      <input type="text" id="initial-input" /> <br />
-      <button onclick="setInitial()">Submit</button>
+      <div id="user-prompt">
+        <span>Please write your intials:</span>
+        <input type="text" id="initial-input" />
+      </div>
+      <br />
+      <button class="sub-btn" onclick="setInitial()">Submit</button>
     </div>
     <!-- Results -->
+
     <div class="results hide">
-      <div class="results-title">
+      <div id="result-title">
         <span>Results</span>
       </div>
       <br />
-      <span>User Initials: </span>
-      <div class="initials"></div>
-      <br />
-      <span>Score: </span>
-      <div class="score"></div>
-      <br />
+      <div class="user-info">
+        <span>User Initials: </span>
+        <div class="initials"></div>
+        <br />
+        <span>Score: </span>
+        <div class="score"></div>
+      </div>
     </div>
-    <!-- JavaScript Link -->
+
     <script src="script.js"></script>
   </body>
 </html>
