@@ -2,47 +2,48 @@ var questions = [
     { 
         question: "Who finished writing Robert Jordan's 'Wheel of Time' epic fantasy series after his passing?",
         answers: [
-            {text: "Neil Gaiman", correct: false},
-            {text: "Terry Pratchett", correct: false},
-            {text: "Brandon Sanderson", correct: true},
-            {text: "R.F. Kuang", correct: false},
-        ]
+            {text: "Neil Gaiman", correct: "false"},
+            {text: "Terry Pratchett", correct: "false"},
+            {text: "Brandon Sanderson", correct: "true"},
+            {text: "R.F. Kuang", correct: "false"},
+        ],
     },
     { 
         question: "Which book centres around a human pulled into the land of the Fae?",
         answers: [
-            {text: "From Blood and Ash", correct: false},
-            {text: "A Court of Thorns and Roses", correct: true},
-            {text: "Red Rising", correct: false},
-            {text: "Coraline", correct: false},
-        ]
+            {text: "From Blood and Ash", correct: "false"},
+            {text: "A Court of Thorns and Roses", correct: "true"},
+            {text: "Red Rising", correct: "false"},
+            {text: "Coraline", correct: "false"}
+        ],
     },
     { 
         question: "In 'From Blood and Ash' what is Hawke's real name?",
         answers: [
-            {text: "Casteel", correct: true},
-            {text: "Keiran", correct: false},
-            {text: "Nyktos", correct: false},
-            {text: "Malik", correct: false},
-        ]
+            {text: "Casteel", correct: "true"},
+            {text: "Keiran", correct: "false"},
+            {text: "Nyktos", correct: "false"},
+            {text: "Malik", correct: "false"},
+        ],
     },
     { 
         question: "Which of Neil Gaiman's book's explores a war between ancient gods and new gods?",
         answers: [
-            {text: "Norse Mythology", correct: false},
-            {text: "The Ocean at the End of the Lane", correct: false},
-            {text: "Neverwhere", correct: false},
-            {text: "American Gods", correct: true},
-        ]
+            {text: "Norse Mythology", correct: "false"},
+            {text: "The Ocean at the End of the Lane", correct: "false"},
+            {text: "Neverwhere", correct: "false"},
+            {text: "American Gods", correct: "true"},
+        ],
     },
     { 
         question: "Who wrote the novel 'Fourth Wing'?",
         answers: [
-            {text: "Sarah J. Maas", correct: false},
-            {text: "Rebecca Yarros", correct: true},
-            {text: "Jennifer L. Armentrout", correct: false},
-            {text: "Katie Roberts", correct: false},
-        ]
+            {text: "Sarah J. Maas", correct: "false"},
+            {text: "Rebecca Yarros", correct: "true"},
+            {text: "Jennifer L. Armentrout", correct: "false"},
+            {text: "Katie Roberts", correct: "false"},
+        ],
+  
     }
 ]
 
@@ -57,13 +58,13 @@ var answers = [
 var questionEl = document.querySelector(".question");
 var answerEl = document.querySelector(".answers-list");
 var startBtnEl = document.querySelector(".start-button");
-var nextBtnEl = document.querySelector(".nextBtn");
 var gotItRightEl = document.querySelector("#got-it-right");
 var resultsEl = document.querySelector(".results");
 var qContainerEl = document.querySelector(".quiz-container");
 var initialInputForm = document.querySelector(".initialsInput");
 var initialValue;
 var currentQuestion = 0;
+var infoEl = document.querySelector(".info-box");
 
 function startHandler() {
     qContainerEl.classList.remove("hide")
@@ -73,13 +74,13 @@ function startHandler() {
 }
 
 
-function displayQuestion(questionIndex) {
-    questionEl.textContent=questions[questionIndex].question
+function displayQuestion() {
+    questionEl.textContent=questions[0].question
     clearAnswers();
-    for(var i=0; i<questions[questionIndex].answers.length; i++){
+    for(var i=0; i<questions[0].answers.length; i++){
     var btnEl=document.createElement("button")
     btnEl.classList.add("btn")
-    btnEl.textContent=questions[questionIndex].answers[i].text
+    btnEl.textContent=questions[0].answers[i].text
     var brEl = document.createElement("br")        
     answerEl.append(btnEl)
     answerEl.append(brEl)
@@ -105,19 +106,21 @@ function nextPage() {
 }
 
 function setAnswer(questionNum, answer) {
-    var currentQuestion = questions[questionNum];
-    var gotItRight = currentQuestion.answers.filter(a => a.text === answer)[0].correct
-    answers[questionNum] = gotItRight;
-    gotItRightEl.classList.remove("hide")
-    if (gotItRight) {
-        gotItRightEl.innerText = "Correct!"
-    } else {
-        gotItRightEl.innerText = "Wrong!"
-    }
-    setTimeout(function() {
-        gotItRightEl.classList.add("hide")
-        nextPage()
-    }, 2000)
+var currentQuestion = questions[questionNum];
+var gotItRight = currentQuestion.answers.filter(a => a.text === answer)[0].correct
+answers[questionNum] = gotItRight;
+gotItRightEl.classList.remove("hide")
+if (gotItRight) {
+          gotItRightEl.innerText = "Correct!"
+        //   console.log(gotItRight)
+} else {
+     gotItRightEl.innerText = "Wrong!";
+    timeLeft -=10;
+}
+ setTimeout(function() {
+    gotItRightEl.classList.add("hide")
+    nextPage()
+ }, 2000)
 }
 
 function setInitial() {
@@ -153,3 +156,4 @@ var timeInterval = setInterval(function() {
 
 
 startBtnEl.addEventListener("click", startHandler);
+infoEl.addEventListener("click", setAnswer);
