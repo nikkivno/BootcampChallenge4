@@ -14,11 +14,11 @@ Font: <i>Monserrat</i> supplied by Google Fonts
 
 ## Website Preview
 
-<img src="assets/images/rule-page.png">
+<img src="Assets/images/rule-page.png">
 <br>
-<img src="assets/images/question-page.png">
+<img src="Assets/images/question-page.png">
 <br>
-<img src= "assets/images/results-page.png">
+<img src= "Assets/images/results-page.png">
 
 ## Deployed Website Link
 
